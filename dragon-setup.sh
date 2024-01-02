@@ -2,8 +2,8 @@
 
 #zsh script to set up kali in desired state, run as kali user
 
-mkdir -p $HOME/Hack/{ctf/pico,htb,portswigger,dependencies/{go,openvpn}}
-sudo apt install -y golang micro python3-venv libpcap-dev massdns
+mkdir -p $HOME/Hack/{ctf/{pico,random},htb,portswigger,dependencies/{go,openvpn}}
+sudo apt install -y golang micro python3-venv libpcap-dev massdns python3-pwntools
 cd $HOME/Hack/dependencies && python3 -m venv py3env 
 echo "export GOPATH=$HOME/Hack/dependencies/go
 export PATH=$PATH:$GOPATH/bin
