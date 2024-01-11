@@ -2,14 +2,15 @@
 
 #zsh script to set up kali in desired state, run as kali user
 
-mkdir -p $HOME/Hack/{ctf/{pico,random},htb,portswigger,dependencies/{go,openvpn}}
+mkdir -p $HOME/hack/{ctf/{pico,random},htb,portswigger,dependencies/{go,openvpn}}
 sudo apt install -y golang micro python3-venv libpcap-dev massdns ntp python3-pwntools ghidra seclists
-cd $HOME/Hack/dependencies && python3 -m venv py3env 
+cd $HOME/hack/dependencies && python3 -m venv py3env 
 echo "
 \n
-export GOPATH=\$HOME/Hack/dependencies/go
+export GOPATH=\$HOME/hack/dependencies/go
 export PATH=\$PATH:\$GOPATH/bin
-alias py3env='source /home/kali/Hack/dependencies/py3env/bin/activate'
+alias py3env='source /home/kali/hack/dependencies/py3env/bin/activate'
+alias htbl='sudo openvpn /home/kali/hack/dependencies/openvpn/htb-labs.ovpn'
 junk() 
 {
     mv \$1 '/home/kali/.trash'
