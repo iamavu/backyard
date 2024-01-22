@@ -11,6 +11,7 @@ export GOPATH=\$HOME/hack/dependencies/go
 export PATH=\$PATH:\$GOPATH/bin
 alias py3env='source /home/kali/hack/dependencies/py3env/bin/activate'
 alias htbl='sudo openvpn /home/kali/hack/dependencies/openvpn/htb-labs.ovpn'
+alias update='sudo apt update && sudo apt full-upgrade -y'
 junk() 
 {
     mv \$1 '/home/kali/.trash'
