@@ -3,7 +3,7 @@
 #zsh script to set up kali in desired state, run as kali user
 
 mkdir -p $HOME/hack/{ctf/{pico,random},htb,portswigger,dependencies/{go,openvpn}}
-sudo apt install -y golang micro python3-venv libpcap-dev massdns ntp python3-pwntools ghidra seclists dirsearch rizin-cutter dtrx alacarte
+sudo apt install -y golang micro python3-venv libpcap-dev massdns ntp python3-pwntools ghidra seclists dirsearch rizin-cutter dtrx alacarte jq
 cd $HOME/hack/dependencies && python3 -m venv py3env 
 echo "
 \n
