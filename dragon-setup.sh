@@ -20,6 +20,7 @@ export PATH=\$PATH:\$GOPATH/bin
 alias py3env='source /home/kali/hack/dependencies/py3env/bin/activate'
 alias htbl='sudo openvpn /home/kali/hack/dependencies/openvpn/htb-labs.ovpn'
 alias update='sudo apt update && sudo apt full-upgrade -y'
+alias repy3='rm -rf /home/kali/hack/dependencies/py3env/ && python3 -m venv /home/kali/hack/dependencies/py3env/ && source /home/kali/hack/dependencies/py3env/bin/activate'
 junk() 
 {
     mv \$1 '/home/kali/.trash'
