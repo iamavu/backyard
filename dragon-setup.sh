@@ -7,7 +7,7 @@ mkdir -p $HOME/hack/{ctf/{pico,random},htb,blogs,portswigger,dependencies/{go,op
 
 #install crucial stuff
 sudo apt-get update
-sudo apt-get install -y ca-certificates curl golang micro python3-venv libpcap-dev massdns ntp python3-pwntools ghidra seclists dirsearch rizin-cutter dtrx alacarte jq xxd
+sudo apt-get install -y ca-certificates curl golang micro python3-venv libpcap-dev massdns ntp python3-pwntools ghidra seclists dirsearch rizin-cutter dtrx alacarte jq xxd gcc-multilib g++-multilib
 
 #create virtual python3 environment
 cd $HOME/hack/dependencies && python3 -m venv py3env 
