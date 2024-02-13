@@ -27,9 +27,15 @@ junk()
     mv \$1 '/home/kali/.trash'
 }
 
-insgcc()
+insgcc32()
 {
-    gcc \$1 -fno-stack-protector -z execstack -no-pie && mv a.out \${1%??}
+    gcc $1 -m32 -fno-stack-protector -z execstack -no-pie && mv a.out ${1%??}
+
+}
+
+insgcc64()
+{
+    gcc $1 -fno-stack-protector -z execstack -no-pie && mv a.out ${1%??}
 
 }" >> $HOME/.zshrc
 source $HOME/.zshrc
