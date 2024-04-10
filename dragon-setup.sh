@@ -22,6 +22,7 @@ alias htbl='sudo openvpn /home/kali/hack/dependencies/openvpn/htb-labs.ovpn'
 alias update='sudo apt update && sudo apt full-upgrade -y'
 alias repy3='rm -rf /home/kali/hack/dependencies/py3env/ && python3 -m venv /home/kali/hack/dependencies/py3env/ && source /home/kali/hack/dependencies/py3env/bin/activate'
 alias rnm='sudo systemctl restart NetworkManager.service'
+alias dojo='ssh -i ~/.ssh/id_rsa hacker@dojo.pwn.college'
 junk() 
 {
     mv \$1 '/home/kali/.trash'
