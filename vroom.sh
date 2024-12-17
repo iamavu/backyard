@@ -45,3 +45,6 @@ source $HOME/.zshrc
 #install pwndbg
 cd /opt && sudo git clone https://github.com/pwndbg/pwndbg.git && sudo chown -R $USER pwndbg && cd pwndbg && ./setup.sh && echo "source /opt/pwndbg/gdbinit.py" > $HOME/.gdbinit
 
+#install croc
+
+curl https://getcroc.schollz.com | bash
