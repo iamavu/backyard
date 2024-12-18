@@ -7,7 +7,7 @@ mkdir -p $HOME/hack/{ctf/{pico,random},htb,portswigger,dependencies/{go,openvpn}
 
 #install crucial stuff
 sudo apt-get update
-sudo apt-get install -y ca-certificates curl git golang micro python3-venv libpcap-dev ntp python3-pwntools dirsearch dtrx alacarte jq xxd gcc-multilib g++-multilib zsh-autosuggestions zsh-syntax-highlighting zsh
+sudo apt-get install -y ca-certificates curl git golang micro python3-venv libpcap-dev ntp python3-pwntools dirsearch dtrx alacarte jq xxd gcc-multilib g++-multilib zsh-autosuggestions zsh-syntax-highlighting zsh openjdk-24-jdk
 
 #setup oh-my-zsh and it's plugins
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
