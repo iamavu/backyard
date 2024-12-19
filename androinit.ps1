@@ -83,32 +83,32 @@ $content = $webClient.DownloadString($studioURL)
 $downloadURL = $content | Select-String -Pattern "https://dl.google.com/android/repository/commandlinetools-win-[0-9]+_latest.zip" | Select-Object -First 1 | ForEach-Object { $_.Matches.Value }
 
 # Set up directories
-$toolsDir = "$env:USERPROFILE\Android\Sdk"
-$cmdlineToolsDir = "$toolsDir\cmdline-tools"
-$latestDir = "$cmdlineToolsDir\latest"
-$androidSdkRoot = $toolsDir
-$platformToolsDir = "$androidSdkRoot\platform-tools"
+$ToolsDir = "$env:USERPROFILE\Android\Sdk"
+$cmdlineToolsDir = "$ToolsDir\cmdline-tools"
+$LatestDir = "$cmdlineToolsDir\latest"
+$AndroidSdkRoot = $ToolsDir
+$platformToolsDir = "$AndroidSdkRoot\platform-tools"
 $cmdlineBinDir = "$LatestDir\bin"
 
 # Create directories if necessary
 Write-StatusMessage "Creating necessary directories..." "INFO"
-New-Item -ItemType Directory -Force -Path $toolsDir | Out-Null
+New-Item -ItemType Directory -Force -Path $ToolsDir | Out-Null
 New-Item -ItemType Directory -Force -Path $LatestDir | Out-Null
 Write-StatusMessage "Directories created successfully" "SUCCESS"
 
 # Download the file
-$zipFile = "$toolsDir\commandlinetools.zip"
+$zipFile = "$ToolsDir\commandlinetools.zip"
 Write-StatusMessage "Downloading Android SDK tools from: $downloadUrl" "INFO"
 Start-BitsTransfer -Source $downloadUrl -Destination $zipFile -DisplayName "Android SDK Tools" -Description "Downloading Android SDK Command Line Tools"
 
 # Extract the zip file
-Write-StatusMessage "Extracting SDK tools to $toolsDir" "INFO"
-Expand-Archive -Path $zipFile -DestinationPath $toolsDir -Force
+Write-StatusMessage "Extracting SDK tools to $ToolsDir" "INFO"
+Expand-Archive -Path $zipFile -DestinationPath $ToolsDir -Force
 Remove-Item $zipFile
 Write-StatusMessage "Extraction completed" "SUCCESS"
 
 # Move files
-Get-ChildItem -Path "$toolsDir\cmdline-tools" -Exclude "latest" | Move-Item -Destination $latestDir -Force
+Get-ChildItem -Path "$ToolsDir\cmdline-tools" -Exclude "latest" | Move-Item -Destination $LatestDir -Force
 
 # Update environment variables for user
 Write-StatusMessage "Updating environment variables..." "INFO"
